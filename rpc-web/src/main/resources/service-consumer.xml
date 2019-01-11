@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 服务端配置
+        1、配置开放端口信息；
+        2、配置服务接口暴露；
+     -->
+    <bean id="serverConfig" class="com.qs.rpc.config.ServerConfig">
+        <property name="ip" value="127.0.0.1"/>
+        <property name="port" value="9999"/>
+        <property name="serverImplMap">
+            <map>
+                <entry key="com.qs.rpc.serviceImpl.UserService" value="com.qs.rpc.serviceImpl.UserServiceImpl"/>
+            </map>
+        </property>
+    </bean>
+</beans>
